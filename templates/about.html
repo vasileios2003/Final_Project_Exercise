@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1 class="display-4">Meet The Founder 📚</h1>
+  <p class="lead">Your one-stop shop for Fiction, Mystery, Fantasy, and more!</p>
+
+  {% if user.is_authenticated %}
+    <p class="text-success">You're logged in as {{ user.username }}.</p>
+  {% else %}
+    <a href="{% url 'login' %}" class="btn btn-primary btn-lg me-2">Sign In</a>
+    <a href="{% url 'register' %}" class="btn btn-outline-secondary btn-lg">Register</a>
+  {% endif %}
+</div>
+{% endblock %}
